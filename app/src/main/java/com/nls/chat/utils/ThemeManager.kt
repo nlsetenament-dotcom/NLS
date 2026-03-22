@@ -7,11 +7,12 @@ import com.nls.chat.data.local.PreferencesManager
 object ThemeManager {
 
     fun applyTheme(context: Context) {
-        val prefs = PreferencesManager(context)
-        when (prefs.appTheme) {
-            Constants.THEME_DARK  -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            Constants.THEME_BW    -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            else                  -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        val theme = PreferencesManager(context).appTheme
+        when (theme) {
+            Constants.THEME_DARK,
+            Constants.THEME_BW,
+            Constants.THEME_AMOLED -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            else                   -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 

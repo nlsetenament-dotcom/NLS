@@ -52,6 +52,7 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun loadCurrentSettings() {
         isLoadingSettings = true
+
         val config = prefs.companionConfig
         if (config != null) {
             binding.etCompanionName.setText(config.name)
@@ -61,11 +62,17 @@ class SettingsActivity : AppCompatActivity() {
                     .placeholder(R.drawable.ic_avatar_default).into(binding.ivAvatar)
             }
         }
-        when (prefs.appTheme) {
-            Constants.THEME_DARK -> binding.rgTheme.check(binding.rbDark.id)
-            Constants.THEME_BW   -> binding.rgTheme.check(binding.rbBw.id)
-            else                 -> binding.rgTheme.check(binding.rbLight.id)
+
+        // Marcar el radio button correcto segun el tema guardado
+        val radioId = when (prefs.appTheme) {
+            Constants.THEME_DARK   -> binding.rbDark.id
+            Constants.THEME_BW     -> binding.rbBw.id
+            Constants.THEME_AMOLED -> binding.rbAmoled.id
+            Constants.THEME_SEPIA  -> binding.rbSepia.id
+            else                   -> binding.rbLight.id
         }
+        binding.rgTheme.check(radioId)
+
         isLoadingSettings = false
     }
 
@@ -76,9 +83,11 @@ class SettingsActivity : AppCompatActivity() {
         binding.rgTheme.setOnCheckedChangeListener { _, checkedId ->
             if (isLoadingSettings) return@setOnCheckedChangeListener
             val theme = when (checkedId) {
-                binding.rbDark.id -> Constants.THEME_DARK
-                binding.rbBw.id   -> Constants.THEME_BW
-                else              -> Constants.THEME_LIGHT
+                binding.rbDark.id   -> Constants.THEME_DARK
+                binding.rbBw.id     -> Constants.THEME_BW
+                binding.rbAmoled.id -> Constants.THEME_AMOLED
+                binding.rbSepia.id  -> Constants.THEME_SEPIA
+                else                -> Constants.THEME_LIGHT
             }
             ThemeManager.setTheme(this, theme)
             recreate()

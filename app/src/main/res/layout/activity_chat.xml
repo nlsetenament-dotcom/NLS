@@ -6,37 +6,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="#F5F5F5">
+    android:background="?attr/colorSurfaceVariant">
 
-    <!-- Toolbar negro -->
+    <!-- Toolbar negro con gear y delete -->
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="#000000"
+        android:background="?attr/colorPrimary"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingStart="4dp"
-        android:paddingEnd="8dp">
+        android:paddingEnd="4dp">
 
+        <!-- Flecha atras -->
         <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_arrow_back"
-            android:tint="#FFFFFF"
-            android:contentDescription="Volver"
-            android:onClick="finish"/>
+            android:tint="?attr/colorOnPrimary"
+            android:contentDescription="Volver"/>
 
+        <!-- Avatar -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivToolbarAvatar"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:src="@drawable/ic_avatar_default"
             app:civ_border_width="1.5dp"
-            app:civ_border_color="#333333"
-            android:layout_marginStart="4dp"/>
+            app:civ_border_color="#44FFFFFF"
+            android:layout_marginStart="2dp"/>
 
+        <!-- Nombre y status -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -49,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Luna"
-                android:textColor="#FFFFFF"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -68,22 +71,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="En linea"
-                    android:textColor="#9E9E9E"
+                    android:textColor="#99FFFFFF"
                     android:textSize="11sp"/>
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Boton BORRAR chat -->
         <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnClearChat"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_more_vert"
-            android:tint="#FFFFFF"
-            android:contentDescription="Mas opciones"
-            android:onClick="openOptionsMenu"/>
+            android:src="@drawable/ic_delete"
+            android:tint="?attr/colorOnPrimary"
+            android:contentDescription="Borrar chat"/>
+
+        <!-- Boton CONFIGURACION (gear) -->
+        <ImageButton
+            android:id="@+id/btnGearSettings"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_gear"
+            android:tint="?attr/colorOnPrimary"
+            android:contentDescription="Configuracion"/>
+
     </LinearLayout>
 
-    <!-- RecyclerView -->
+    <!-- Lista de mensajes -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMessages"
         android:layout_width="match_parent"
@@ -93,7 +108,7 @@
         android:clipToPadding="false"
         android:scrollbars="none"/>
 
-    <!-- Typing indicator -->
+    <!-- Indicador escribiendo -->
     <LinearLayout
         android:id="@+id/layoutTyping"
         android:layout_width="wrap_content"
@@ -121,39 +136,28 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvTypingDot1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="●"
-                android:textColor="#000000"
-                android:textSize="10sp"
-                android:layout_marginEnd="3dp"/>
-            <TextView
-                android:id="@+id/tvTypingDot2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="●"
-                android:textColor="#000000"
-                android:textSize="10sp"
-                android:layout_marginEnd="3dp"/>
-            <TextView
-                android:id="@+id/tvTypingDot3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="●"
-                android:textColor="#000000"
+            <TextView android:id="@+id/tvTypingDot1"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="●" android:textColor="?attr/colorPrimary"
+                android:textSize="10sp" android:layout_marginEnd="3dp"/>
+            <TextView android:id="@+id/tvTypingDot2"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="●" android:textColor="?attr/colorPrimary"
+                android:textSize="10sp" android:layout_marginEnd="3dp"/>
+            <TextView android:id="@+id/tvTypingDot3"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="●" android:textColor="?attr/colorPrimary"
                 android:textSize="10sp"/>
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Input area blanca -->
+    <!-- Barra de input -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#FFFFFF"
+        android:background="?attr/colorSurface"
         android:padding="10dp"
         android:elevation="4dp">
 
@@ -164,8 +168,8 @@
             android:layout_weight="1"
             android:background="@drawable/bg_input_field"
             android:hint="Escribe un mensaje..."
-            android:textColorHint="#9E9E9E"
-            android:textColor="#000000"
+            android:textColorHint="?attr/colorOnSurfaceVariant"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="15sp"
             android:maxLines="4"
             android:inputType="textMultiLine|textCapSentences"
@@ -180,7 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_send"
-            app:backgroundTint="#000000"
+            app:backgroundTint="?attr/colorPrimary"
             app:fabSize="mini"
             android:contentDescription="Enviar"/>
     </LinearLayout>
