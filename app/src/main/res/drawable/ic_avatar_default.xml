@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp" android:height="96dp"
+    android:viewportWidth="96" android:viewportHeight="96">
+    <!-- Fondo negro -->
+    <path android:fillColor="#000000"
+        android:pathData="M48,48m-48,0a48,48 0,1 1,96 0a48,48 0,1 1,-96 0"/>
+    <!-- Cuerpo blanco -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.15"
+        android:pathData="M18,84 C18,66 30,57 48,57 C66,57 78,66 78,84 Z"/>
+    <!-- Cara blanca -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.9"
+        android:pathData="M48,20 C37,20 28,29 28,42 C28,55 37,62 48,62 C59,62 68,55 68,42 C68,29 59,20 48,20 Z"/>
+    <!-- Cabello negro -->
+    <path android:fillColor="#000000"
+        android:pathData="M28,40 C28,22 68,22 68,40 C66,26 60,16 48,16 C36,16 30,26 28,40 Z"/>
+    <!-- Ojos negros -->
+    <path android:fillColor="#000000"
+        android:pathData="M39,40 C38,38 40,36 42,37 C43,38 42,41 40,41 C39,41 39,40 39,40 Z"/>
+    <path android:fillColor="#000000"
+        android:pathData="M54,40 C53,38 55,36 57,37 C58,38 57,41 55,41 C54,41 54,40 54,40 Z"/>
+    <!-- Boca -->
+    <path android:strokeColor="#000000" android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M43,50 C45,53 51,53 53,50"/>
+</vector>

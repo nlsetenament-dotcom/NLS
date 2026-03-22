@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta B&W estilo studio -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_900">#212121</color>
+
+    <!-- Sistema -->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorSecondary">#212121</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+
+    <!-- Chat -->
+    <color name="chat_bg">#F5F5F5</color>
+    <color name="bubble_sent">#000000</color>
+    <color name="bubble_sent_text">#FFFFFF</color>
+    <color name="bubble_received">#FFFFFF</color>
+    <color name="bubble_received_text">#000000</color>
+    <color name="bubble_received_stroke">#E0E0E0</color>
+
+    <!-- UI -->
+    <color name="online_green">#22C55E</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="input_bg">#F5F5F5</color>
+</resources>
