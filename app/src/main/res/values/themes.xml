@@ -12,8 +12,9 @@
         <item name="colorSurface">#FFFFFF</item>
         <item name="colorOnSurface">#000000</item>
 
-        <item name="colorBackground">#FFFFFF</item>
-        <item name="colorOnBackground">#000000</item>
+        <!-- 🔥 IMPORTANTE: usar android: -->
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="android:colorForeground">#000000</item>
 
         <item name="android:statusBarColor">#000000</item>
         <item name="android:navigationBarColor">#FFFFFF</item>
