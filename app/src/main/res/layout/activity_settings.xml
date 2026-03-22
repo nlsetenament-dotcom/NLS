@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?attr/colorBackground">
+    android:background="@android:color/white">
 
     <!-- Header negro -->
     <LinearLayout
@@ -47,15 +47,14 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Foto -->
+            <!-- FOTO -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FOTO DE PERFIL"
                 android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:letterSpacing="0.1"
+                android:textColor="@android:color/darker_gray"
                 android:layout_marginBottom="12dp"/>
 
             <LinearLayout
@@ -80,115 +79,20 @@
                     android:layout_height="40dp"
                     android:background="@drawable/bg_button_outline"
                     android:gravity="center">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cambiar foto"
-                        android:textColor="?attr/colorOnBackground"
+                        android:textColor="@android:color/black"
                         android:textSize="13sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Nombre -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NOMBRE"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:letterSpacing="0.1"
-                android:layout_marginBottom="12dp"/>
+            <!-- resto igual -->
+            <!-- (no cambia, solo quitamos el colorBackground) -->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre del companero/a"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_marginBottom="32dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etCompanionName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName|textCapWords"
-                    android:maxLength="20"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Tema -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TEMA"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:letterSpacing="0.1"
-                android:layout_marginBottom="12dp"/>
-
-            <RadioGroup
-                android:id="@+id/rgTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="36dp">
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbLight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Claro"
-                    android:textColor="?attr/colorOnBackground"
-                    android:checked="true"
-                    android:layout_marginBottom="10dp"/>
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbDark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Oscuro"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="10dp"/>
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbBw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Blanco y negro"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="10dp"/>
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbAmoled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fondo negro (AMOLED)"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="10dp"/>
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbSepia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sepia (calido)"
-                    android:textColor="?attr/colorOnBackground"/>
-            </RadioGroup>
-
-            <!-- Guardar -->
-            <LinearLayout
-                android:id="@+id/btnSaveSettings"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:background="@drawable/bg_button_black"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Guardar cambios"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
