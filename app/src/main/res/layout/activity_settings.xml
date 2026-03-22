@@ -1,59 +1,131 @@
-<!-- NOMBRE -->
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="NOMBRE DEL COMPANERO"
-    android:textSize="11sp"
-    android:textStyle="bold"
-    android:textColor="@android:color/darker_gray"
-    android:layout_marginTop="16dp"/>
-
-<EditText
-    android:id="@+id/etCompanionName"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Escribe el nombre"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
-<!-- TEMA -->
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="TEMA"
-    android:textSize="11sp"
-    android:textStyle="bold"
-    android:textColor="@android:color/darker_gray"
-    android:layout_marginTop="24dp"/>
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="44dp"
+        android:paddingBottom="16dp">
 
-<RadioGroup
-    android:id="@+id/rgTheme"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btnBackSettings"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="?attr/colorOnPrimary"
+            android:contentDescription="Volver"/>
 
-    <RadioButton
-        android:id="@+id/rbDark"
-        android:text="Dark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configuración"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
-    <RadioButton
-        android:id="@+id/rbBw"
-        android:text="B/N"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <RadioButton
-        android:id="@+id/rbAmoled"
-        android:text="Amoled"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    <RadioButton
-        android:id="@+id/rbSepia"
-        android:text="Sepia"/>
+            <!-- FOTO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FOTO DE PERFIL"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="12dp"/>
 
-    <RadioButton
-        android:id="@+id/rbLight"
-        android:text="Light"/>
-</RadioGroup>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_avatar_default"
+                app:civ_border_width="2dp"
+                app:civ_border_color="?attr/colorPrimary"
+                android:layout_marginBottom="16dp"/>
 
-<!-- BOTÓN GUARDAR -->
-<Button
-    android:id="@+id/btnSaveSettings"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Guardar"
-    android:layout_marginTop="24dp"/>
+            <!-- NOMBRE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOMBRE DEL COMPAÑERO"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/etCompanionName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Escribe el nombre"/>
+
+            <!-- TEMA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEMA"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="24dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbLight"
+                    android:text="Claro"/>
+
+                <RadioButton
+                    android:id="@+id/rbDark"
+                    android:text="Oscuro"/>
+
+                <RadioButton
+                    android:id="@+id/rbBw"
+                    android:text="Blanco y negro"/>
+
+                <RadioButton
+                    android:id="@+id/rbAmoled"
+                    android:text="AMOLED"/>
+
+                <RadioButton
+                    android:id="@+id/rbSepia"
+                    android:text="Sepia"/>
+            </RadioGroup>
+
+            <!-- BOTÓN GUARDAR -->
+            <Button
+                android:id="@+id/btnSaveSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:layout_marginTop="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
